@@ -9,7 +9,10 @@
   "bin": {
     "gpt-term": "./dist/cli.mjs"
   },
-  "keywords": [],
+  "files": [
+    "dist"
+  ],
+  "keywords": ["openai", "chat-gpt", "cli"],
   "author": "Jon Watkins",
   "license": "MIT",
   "dependencies": {
