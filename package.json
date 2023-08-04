@@ -1,0 +1,28 @@
+{
+  "name": "gpt-term",
+  "version": "1.0.0",
+  "description": "Run ChatGpt in your terminal",
+  "main": "dist/index.mjs",
+  "scripts": {
+    "build": "tsup --config tsup.config.js"
+  },
+  "bin": {
+    "gpt-term": "./dist/cli.mjs"
+  },
+  "keywords": [],
+  "author": "Jon Watkins",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "openai": "^3.3.0",
+    "prompts": "^2.4.2",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.7",
+    "@types/prompts": "^2.4.4",
+    "@types/yargs": "^17.0.24",
+    "tsup": "^7.2.0",
+    "typescript": "^5.1.6"
+  }
+}
