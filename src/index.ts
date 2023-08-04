@@ -46,7 +46,7 @@ async function makeRequest(model: string) {
     })
     const assistantReply = completion.data.choices[0].message.content;
     messages.push({ role: 'assistant', content: assistantReply });
-    console.log(assistantReply);
+    console.log('ChatGPT: ', assistantReply);
     await makeRequest(model)    
   } catch (error: any) {
     if (error.response) {
