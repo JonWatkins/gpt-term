@@ -1,15 +1,16 @@
 {
   "name": "gpt-term",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Run ChatGpt in your terminal",
   "main": "dist/index.mjs",
   "scripts": {
     "build": "tsup --config tsup.config.js"
   },
   "bin": {
-    "gpt-term": "./dist/cli.mjs"
+    "gpt-term": "./index.mjs"
   },
   "files": [
+    "index.mjs",
     "dist"
   ],
   "keywords": ["openai", "chat-gpt", "cli"],
