@@ -1,4 +1,4 @@
-import { CHAT_PREFIX, ASSISTANT } from "./config";
+import { CHAT_PREFIX, ASSISTANT, WRITE_INTERVAL } from "./config";
 import chalk from "chalk";
 import { marked } from "marked";
 import TerminalRenderer from "marked-terminal";
@@ -17,13 +17,22 @@ export const systemResponse = (
   }
 };
 
-export const assistantResponse = (response: string): void => {
+export const assistantResponse = (response: string): Promise<string> => {
   const parsedMarkdown = marked.parse(response);
   const parsedResponse = `${chalk.green(
     CHAT_PREFIX,
   )} ${ASSISTANT} ${parsedMarkdown}`;
-  console.log(parsedResponse);
-  if (response === "goodbye") {
-    process.exit(0);
-  }
+
+  return new Promise((resolve) => {
+    let i = 0;
+    const interval = setInterval(() => {
+      if (i < parsedResponse.length) {
+        process.stdout.write(parsedResponse[i]);
+        i++;
+      } else {
+        clearInterval(interval);
+        resolve(parsedResponse);
+      }
+    }, WRITE_INTERVAL);
+  });
 };
