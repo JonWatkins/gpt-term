@@ -3,7 +3,7 @@ import chalk from "chalk";
 import ora from "ora";
 import { getPrompt, getResponse, ChatMessage } from "./utils";
 
-program.version("0.0.6");
+program.version("0.0.7");
 
 program
   .command("chat")
