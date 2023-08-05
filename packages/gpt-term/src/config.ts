@@ -1,9 +1,9 @@
 export type ExitCode = "exit" | "quit" | "bye";
+export const VERSION: string = "0.1.1";
 export const ASSISTANT: string = "ChatGPT:";
 export const CHAT_PREFIX: string = "✔";
 export const DEFAULT_MODEL: string = "gpt-3.5-turbo";
 export const DEFAULT_TEMP: string = "0.5";
-export const VERSION: string = "0.1.0";
 export const NOT_FOUND_ERROR: string =
   "Model not found. Please check the model name.";
 export const RATE_EXCEEDED_ERROR: string = "API Rate Limit Exceeded.";
