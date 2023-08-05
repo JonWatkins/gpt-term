@@ -20,8 +20,14 @@ gpt-term chat --model gpt-3.5-turbo --temperature 0.5
 gpt-term removekey
 ```
 
-### Using with npx
+## Using with npx
 
 ```bash
 npx gpt-term chat --model gpt-3.5-turbo --temperature 0.5
+```
+
+`npx` downloads `gpt-term` to it's cache, to remove it run
+
+```bash
+rm -r ~/.npm/_npx/*/node_modules/gpt-term
 ```

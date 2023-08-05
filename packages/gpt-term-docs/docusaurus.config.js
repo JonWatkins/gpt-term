@@ -8,7 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "GPT-Term",
   tagline: "ChatGpt in your terminal",
-  favicon: "img/favicon.ico",
+  favicon: "https://placehold.co/32x32/EEE/31343C?text=G",
 
   // Set the production url of your site here
   url: "https://jonwatkins.github.io/",
@@ -41,13 +41,13 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/JonWatkins/gpt-term",
+          editUrl: "https://github.com/JonWatkins/gpt-term/tree/main/packages/gpt-term-docs/",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/JonWatkins/gpt-term",
+          editUrl: "https://github.com/JonWatkins/gpt-term/tree/main/packages/gpt-term-docs/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -63,10 +63,10 @@ const config = {
       image: "img/docusaurus-social-card.jpg",
       navbar: {
         title: "GPT-Term",
-        logo: {
-          alt: "GPT-Term Logo",
-          src: "img/logo.svg",
-        },
+        // logo: {
+        //   alt: "GPT-Term Logo",
+        //   src: "https://placehold.co/32x32/EEE/31343C?text=G",
+        // },
         items: [
           {
             type: "docSidebar",
@@ -90,7 +90,7 @@ const config = {
             items: [
               {
                 label: "Tutorial",
-                to: "/docs/intro",
+                to: "/docs/tutorial",
               },
             ],
           },
