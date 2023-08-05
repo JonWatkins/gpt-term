@@ -11,16 +11,19 @@ You will need to have your own [OpenAI](https://platform.openai.com) apikey in o
 To install GPT-Term you can use your favorite package manager.
 
 ### PNPM
+
 ```bash
 pnpm i -g gpt-term
 ```
 
 ### NPM
+
 ```bash
 npm i -g gpt-term
 ```
 
 ### Yarn
+
 ```bash
 yarn i -g gpt-term
 ```
