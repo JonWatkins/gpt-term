@@ -6,6 +6,7 @@
   "scripts": {
     "format": "prettier  --loglevel warn --write \"./**/*.{js,mjs,jsx,cjs,ts,tsx,css,md,json}\" ",
     "lint": "eslint . --ext .jsx,.js,.mjs,.cjs,.ts,.tsx --quiet --fix",
+    "publish": "pnpm publish --filter \"gpt-term\"",
     "build": "pnpm run --filter \"gpt-term\" build",
     "docs": "pnpm run --filter \"gpt-term-docs\" build",
     "start": "pnpm run --filter \"gpt-term-docs\" serve",

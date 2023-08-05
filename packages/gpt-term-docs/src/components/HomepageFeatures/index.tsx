@@ -30,7 +30,7 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: "Powered By ChatGPT",
+    title: "Powered By",
     Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
     description: (
       <>

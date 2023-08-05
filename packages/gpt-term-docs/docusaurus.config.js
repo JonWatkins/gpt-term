@@ -122,9 +122,18 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} GPT-Term, Inc. Built with Docusaurus.`,
       },
       colorMode: {
-        defaultMode: "light",
+        defaultMode: "dark",
         disableSwitch: false,
-        respectPrefersColorScheme: false,
+        respectPrefersColorScheme: true,
+      },
+      announcementBar: {
+        id: "announcementBar",
+        content:
+          'If you like GPT-Term, give it a star on <a target="_blank" ' +
+          'rel="noopener noreferrer" href="https://github.com/JonWatkins/gpt-term">GitHub</a>!',
+        backgroundColor: "#303846",
+        textColor: "#e3e3e3",
+        isCloseable: true,
       },
       prism: {
         theme: lightCodeTheme,
