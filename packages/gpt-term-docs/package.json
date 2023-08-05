@@ -1,6 +1,6 @@
 {
   "name": "gpt-term-docs",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "2.4.1",
+    "@docusaurus/types": "^2.4.1",
     "@tsconfig/docusaurus": "^1.0.5",
     "typescript": "^4.7.4"
   },

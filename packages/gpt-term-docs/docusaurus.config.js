@@ -41,13 +41,15 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/JonWatkins/gpt-term/tree/main/packages/gpt-term-docs/",
+          editUrl:
+            "https://github.com/JonWatkins/gpt-term/tree/main/packages/gpt-term-docs/",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/JonWatkins/gpt-term/tree/main/packages/gpt-term-docs/",
+          editUrl:
+            "https://github.com/JonWatkins/gpt-term/tree/main/packages/gpt-term-docs/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
