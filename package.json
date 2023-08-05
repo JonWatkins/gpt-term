@@ -1,6 +1,6 @@
 {
   "name": "gpt-term",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Run ChatGpt in your terminal",
   "main": "dist/index.mjs",
   "scripts": {
@@ -20,6 +20,13 @@
     "chat-gpt",
     "cli"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonWatkins/gpt-term.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JonWatkins/gpt-term/issues"
+  },
   "author": "Jon Watkins",
   "license": "MIT",
   "dependencies": {

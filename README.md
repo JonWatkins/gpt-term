@@ -4,15 +4,18 @@ Work in progress simple cli application for interacting with ChatGPT.
 
 ### Usage
 
-You need to set up an environment variable for your OpenAI API key in
-your `~/.bash-profile` or `.zshrc` or which ever you use
-
 ```bash
-export OPENAI_KEY = "YOUR-OPENAI-API-KEY"
+npx gpt-term addkey --key YOUR_KEY_HERE
 ```
 
 ```bash
-npx gpt-term@latest chat
+npx gpt-term chat
+```
+
+## Removing your API Key
+
+```bash
+npx gpt-term removekey
 ```
 
 ### Global Installation
