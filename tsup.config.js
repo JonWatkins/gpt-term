@@ -5,7 +5,7 @@ export default defineConfig({
     cli: "src/index.ts",
   },
   splitting: false,
-  sourcemap: true,
+  sourcemap: false,
   clean: true,
   target: "node20.4",
   format: "esm",
