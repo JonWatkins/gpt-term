@@ -1,5 +1,11 @@
 import { CHAT_PREFIX, ASSISTANT } from "./config";
 import chalk from "chalk";
+import { marked } from "marked";
+import TerminalRenderer from "marked-terminal";
+
+marked.setOptions({
+  renderer: new TerminalRenderer(),
+});
 
 export const systemResponse = (
   response: string,
@@ -12,7 +18,10 @@ export const systemResponse = (
 };
 
 export const assistantResponse = (response: string): void => {
-  const parsedResponse = `${chalk.green(CHAT_PREFIX)} ${ASSISTANT} ${response}`;
+  const parsedMarkdown = marked.parse(response);
+  const parsedResponse = `${chalk.green(
+    CHAT_PREFIX,
+  )} ${ASSISTANT} ${parsedMarkdown}`;
   console.log(parsedResponse);
   if (response === "goodbye") {
     process.exit(0);
