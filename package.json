@@ -1,12 +1,12 @@
 {
   "name": "gpt-term",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Run ChatGpt in your terminal",
   "main": "dist/index.mjs",
   "scripts": {
     "format": "prettier  --loglevel warn --write \"./**/*.{js,mjs,jsx,cjs,ts,tsx,css,md,json}\" ",
     "lint": "eslint . --ext .jsx,.js,.mjs,.cjs,.ts,.tsx --quiet --fix",
-    "build": "tsup --config tsup.config.js"
+    "build": "tsup --config tsup.config.js --minify terser"
   },
   "bin": {
     "gpt-term": "./index.mjs"
@@ -37,6 +37,7 @@
     "eslint-config-prettier": "^8.10.0",
     "eslint-plugin-prettier": "^5.0.0",
     "prettier": "^3.0.1",
+    "terser": "^5.19.2",
     "tsup": "^7.2.0",
     "typescript": "^5.1.6"
   }
