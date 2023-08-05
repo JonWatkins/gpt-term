@@ -5,7 +5,7 @@ authors: [gptterm]
 tags: [ChatGPT, OpenAI, GPT-Term]
 ---
 
-![Welcome Image](./banner.png)
+![Welcome Image](./d-koi-Fc1GBkmV-Dw-unsplash.jpg)
 
 Welcome to our Site! Introducing GPT-Term: Your Ultimate CLI Companion
 

@@ -30,12 +30,12 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: "Powered By",
+    title: "Powered By ChatGPT",
     Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
     description: (
       <>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
+        CLI app powered by ChatGPT offers quick and natural language
+        interactions, enhancing user experience and boosting productivity.
       </>
     ),
   },
