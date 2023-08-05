@@ -12,7 +12,7 @@ npx gpt-term addkey --key YOUR_KEY_HERE
 npx gpt-term chat
 ```
 
-## Removing your API Key
+### Removing your API Key
 
 ```bash
 npx gpt-term removekey
