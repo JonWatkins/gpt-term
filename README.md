@@ -20,8 +20,6 @@ gpt-term removekey
 
 ### Using with npx
 
-To install you can install via npm or your favorite package manager
-
 ```bash
 npx gpt-term chat --model gpt-3.5-turbo --temperature 0.5
 ```
