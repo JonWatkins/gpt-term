@@ -1,8 +1,10 @@
-import chalk from "chalk";
-import { CHAT_PREFIX, ASSISTANT } from "./config";
+import { EXIT_CODES, ExitCodes } from "./config";
 import { ChatMessage, addContext } from "./context";
 import { getResponse } from "./gpt";
 import { loadingSpinner } from "./spinner";
+import { parseError, Exception } from "./errorHandler";
+import { systemResponse, assistantResponse } from "./responseHandler";
+
 import {
   getPrompt,
   CliChatOptions,
@@ -20,16 +22,13 @@ export const removeKey = async (): Promise<void> => {
 };
 
 export const createChat = async (opts: CliChatOptions): Promise<void> => {
-  if (opts.verbose) {
-    console.info(chalk.green(`Starting new chat using ${opts.model}`));
-  }
+  systemResponse(`Starting new chat using ${opts.model}`, opts.verbose);
 
   const processNextMessage = async (): Promise<void> => {
     const prompt = await getPrompt();
 
-    if (["exit", "quit", "bye"].includes(prompt)) {
-      console.log(`${chalk.green(CHAT_PREFIX)} ${ASSISTANT} goodbye`);
-      process.exit(0);
+    if (EXIT_CODES.includes(prompt as ExitCodes)) {
+      assistantResponse("goodbye");
     }
 
     addContext({ role: "user", content: prompt });
@@ -40,14 +39,11 @@ export const createChat = async (opts: CliChatOptions): Promise<void> => {
       loadingSpinner.succeed();
       if (response) {
         addContext(response as ChatMessage);
-        console.log(
-          `${chalk.green(CHAT_PREFIX)} ${ASSISTANT}`,
-          response.content,
-        );
+        assistantResponse(response.content);
       }
     } catch (error) {
-      loadingSpinner.fail("Unable to get response");
-      console.error(error);
+      const errorMessage = parseError(error as Exception);
+      loadingSpinner.fail(errorMessage);
     } finally {
       await processNextMessage();
     }
