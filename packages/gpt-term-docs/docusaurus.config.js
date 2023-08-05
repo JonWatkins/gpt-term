@@ -46,10 +46,10 @@ const config = {
       image: "img/docusaurus-social-card.jpg",
       navbar: {
         title: "GPT-Term",
-        // logo: {
-        //   alt: "GPT-Term Logo",
-        //   src: "https://placehold.co/32x32/EEE/31343C?text=G",
-        // },
+        logo: {
+          alt: "GPT-Term Logo",
+          src: "img/logo.svg",
+        },
         items: [
           {
             type: "docSidebar",
