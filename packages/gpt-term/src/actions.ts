@@ -36,7 +36,8 @@ export const createChat = async (opts: CliChatOptions): Promise<void> => {
     const prompt = await getPrompt();
 
     if (EXIT_CODES.includes(prompt as ExitCode)) {
-      assistantResponse("goodbye");
+      await assistantResponse("goodbye");
+      process.exit(0);
     }
 
     addContext({ role: "user", content: prompt });
@@ -45,7 +46,7 @@ export const createChat = async (opts: CliChatOptions): Promise<void> => {
       const response = await getResponse(apiKey, opts);
       if (response) {
         addContext(response as ChatMessage);
-        assistantResponse(response.content);
+        await assistantResponse(response.content);
       }
     } catch (error) {
       const errorMessage = parseError(error as Exception);

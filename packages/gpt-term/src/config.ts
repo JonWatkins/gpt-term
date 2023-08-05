@@ -2,6 +2,7 @@ export type ExitCode = "exit" | "quit" | "bye";
 export const VERSION: string = "0.1.3";
 export const ASSISTANT: string = "ChatGPT:";
 export const CHAT_PREFIX: string = "✔";
+export const WRITE_INTERVAL: number = 10;
 export const DEFAULT_MODEL: string = "gpt-3.5-turbo";
 export const DEFAULT_TEMP: string = "0.5";
 export const NOT_FOUND_ERROR: string =
