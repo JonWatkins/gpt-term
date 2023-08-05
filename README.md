@@ -4,6 +4,8 @@ Work in progress simple cli application for interacting with ChatGPT.
 
 ### Usage
 
+You will need to have your own [OpenAI](https://platform.openai.com) apikey.
+
 The first time you use the chat function it will prompt you for your key if one was not found. The key
 will be encrypted and stored in a text file on your machine.
 
