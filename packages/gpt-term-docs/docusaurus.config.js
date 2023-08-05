@@ -11,10 +11,10 @@ const config = {
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://your-docusaurus-test-site.com",
+  url: "https://jonwatkins.github.io/",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/",
+  baseUrl: "/gpt-term/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -120,10 +120,10 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} GPT-Term, Inc. Built with Docusaurus.`,
       },
       colorMode: {
-        defaultMode: 'light',
+        defaultMode: "light",
         disableSwitch: false,
         respectPrefersColorScheme: false,
-      },    
+      },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
