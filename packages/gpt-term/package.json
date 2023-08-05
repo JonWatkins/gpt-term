@@ -1,0 +1,44 @@
+{
+  "name": "gpt-term",
+  "version": "0.1.0",
+  "description": "Run ChatGpt in your terminal",
+  "main": "dist/index.mjs",
+  "scripts": {
+    "build": "tsup --config tsup.config.js --minify terser"
+  },
+  "bin": {
+    "gpt-term": "./index.mjs"
+  },
+  "files": [
+    "index.mjs",
+    "dist"
+  ],
+  "keywords": [
+    "openai",
+    "chat-gpt",
+    "cli"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonWatkins/gpt-term.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JonWatkins/gpt-term/issues"
+  },
+  "author": "Jon Watkins",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^11.0.0",
+    "openai": "^3.3.0",
+    "ora": "^7.0.1",
+    "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.7",
+    "@types/prompts": "^2.4.4",
+    "terser": "^5.19.2",
+    "tsup": "^7.2.0",
+    "typescript": "^5.1.6"
+  }
+}
