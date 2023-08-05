@@ -1,9 +1,11 @@
 {
   "name": "gpt-term",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Run ChatGpt in your terminal",
   "main": "dist/index.mjs",
   "scripts": {
+    "format": "prettier  --loglevel warn --write \"./**/*.{js,mjs,jsx,cjs,ts,tsx,css,md,json}\" ",
+    "lint": "eslint . --ext .jsx,.js,.mjs,.cjs,.ts,.tsx --quiet --fix",
     "build": "tsup --config tsup.config.js"
   },
   "bin": {
@@ -13,7 +15,11 @@
     "index.mjs",
     "dist"
   ],
-  "keywords": ["openai", "chat-gpt", "cli"],
+  "keywords": [
+    "openai",
+    "chat-gpt",
+    "cli"
+  ],
   "author": "Jon Watkins",
   "license": "MIT",
   "dependencies": {
@@ -26,6 +32,11 @@
     "@types/node": "^20.4.7",
     "@types/prompts": "^2.4.4",
     "@types/yargs": "^17.0.24",
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
+    "eslint": "^8.46.0",
+    "eslint-config-prettier": "^8.10.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.1",
     "tsup": "^7.2.0",
     "typescript": "^5.1.6"
   }

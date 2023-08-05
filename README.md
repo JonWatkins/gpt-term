@@ -1,10 +1,10 @@
-# Simple CLI app to interact with ChatGPT
+# GPT-Term
 
-Work in progress simple ChatGPT cli application.
+Work in progress simple cli application for interacting with ChatGPT.
 
 ### Usage
 
-You need to set up an environment variable for your OpenAI API key in 
+You need to set up an environment variable for your OpenAI API key in
 your `~/.bash-profile` or `.zshrc` or which ever you use
 
 ```bash
