@@ -1,12 +1,14 @@
 import { Configuration, OpenAIApi } from "openai";
 import { getContext } from "./context";
-import { CliChatOptions, decryptAndReturnKey } from "./utils";
 import { ChatMessage } from "./context";
+import { loadingSpinner } from "./spinner";
+import { CliChatOptions } from "./utils";
 
 export const getResponse = async (
+  apiKey: string,
   options: CliChatOptions,
 ): Promise<ChatMessage> => {
-  const apiKey = await decryptAndReturnKey();
+  loadingSpinner.start();
 
   const configuration = new Configuration({
     apiKey,
@@ -20,6 +22,8 @@ export const getResponse = async (
     temperature: parseInt(options.temperature),
     n: 1,
   });
+
+  loadingSpinner.succeed();
 
   return completion.data.choices[0].message as ChatMessage;
 };

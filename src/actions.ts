@@ -10,7 +10,9 @@ import {
   CliChatOptions,
   CliKeyOptions,
   saveAndEncryptKey,
+  decryptAndReturnKey,
   deleteKey,
+  keyPrompt,
 } from "./utils";
 
 export const addKey = async (opts: CliKeyOptions): Promise<void> => {
@@ -23,6 +25,12 @@ export const removeKey = async (): Promise<void> => {
 
 export const createChat = async (opts: CliChatOptions): Promise<void> => {
   systemResponse(`Starting new chat using ${opts.model}`, opts.verbose);
+  let apiKey = await decryptAndReturnKey();
+
+  if (!apiKey) {
+    apiKey = await keyPrompt();
+    saveAndEncryptKey(apiKey);
+  }
 
   const processNextMessage = async (): Promise<void> => {
     const prompt = await getPrompt();
@@ -32,11 +40,9 @@ export const createChat = async (opts: CliChatOptions): Promise<void> => {
     }
 
     addContext({ role: "user", content: prompt });
-    loadingSpinner.start();
 
     try {
-      const response = await getResponse(opts);
-      loadingSpinner.succeed();
+      const response = await getResponse(apiKey, opts);
       if (response) {
         addContext(response as ChatMessage);
         assistantResponse(response.content);

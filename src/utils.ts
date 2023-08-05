@@ -29,12 +29,32 @@ export const getPrompt = async (): Promise<string> => {
   return prompt;
 };
 
+export const keyPrompt = async (): Promise<string> => {
+  const { prompt } = await prompts({
+    type: "text",
+    name: "prompt",
+    message: "Key not found, Please enter your API key:",
+    validate: (value) =>
+      value.length === 0 ? "You must enter an API Key" : true,
+  });
+
+  return prompt;
+};
+
+const fileExists = async (path: string) =>
+  !!(await fs.stat(path).catch(() => false));
+
 export const saveAndEncryptKey = async (key: string): Promise<void> => {
   return fs.writeFile(KEY_PATH, JSON.stringify(encrypt(key)));
 };
 
 export const decryptAndReturnKey = async (): Promise<string> => {
-  return decrypt(JSON.parse(await fs.readFile(KEY_PATH, "utf8")));
+  const exists = await fileExists(KEY_PATH);
+  if (exists) {
+    return decrypt(JSON.parse(await fs.readFile(KEY_PATH, "utf8")));
+  } else {
+    return "";
+  }
 };
 
 export const deleteKey = async (): Promise<void> => {
