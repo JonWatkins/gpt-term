@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkgpt_term_docs=self.webpackChunkgpt_term_docs||[]).push([[493],{8917:e=>{e.exports=JSON.parse('{"label":"OpenAI","permalink":"/blog/tags/open-ai","allTagsPath":"/blog/tags","count":1}')}}]);

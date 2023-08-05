@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkgpt_term_docs=self.webpackChunkgpt_term_docs||[]).push([[556],{5846:t=>{t.exports=JSON.parse('{"label":"ChatGPT","permalink":"/gpt-term/blog/tags/chat-gpt","allTagsPath":"/gpt-term/blog/tags","count":1}')}}]);
