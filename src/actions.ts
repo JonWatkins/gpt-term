@@ -1,4 +1,4 @@
-import { EXIT_CODES, ExitCodes } from "./config";
+import { EXIT_CODES, ExitCode } from "./config";
 import { ChatMessage, addContext } from "./context";
 import { getResponse } from "./gpt";
 import { loadingSpinner } from "./spinner";
@@ -27,7 +27,7 @@ export const createChat = async (opts: CliChatOptions): Promise<void> => {
   const processNextMessage = async (): Promise<void> => {
     const prompt = await getPrompt();
 
-    if (EXIT_CODES.includes(prompt as ExitCodes)) {
+    if (EXIT_CODES.includes(prompt as ExitCode)) {
       assistantResponse("goodbye");
     }
 

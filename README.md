@@ -6,10 +6,7 @@ Work in progress simple cli application for interacting with ChatGPT.
 
 ```bash
 npx gpt-term addkey --key YOUR_KEY_HERE
-```
-
-```bash
-npx gpt-term chat
+npx gpt-term chat --model gpt-3.5-turbo --temperature 0.5
 ```
 
 ### Removing your API Key

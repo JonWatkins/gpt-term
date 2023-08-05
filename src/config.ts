@@ -1,4 +1,4 @@
-export type ExitCodes = "exit" | "quit" | "bye";
+export type ExitCode = "exit" | "quit" | "bye";
 export const ASSISTANT: string = "ChatGPT:";
 export const CHAT_PREFIX: string = "✔";
 export const DEFAULT_MODEL: string = "gpt-3.5-turbo";
@@ -12,7 +12,7 @@ export const BAD_REQUEST_ERROR: string =
 export const QUOTA_EXCEEDED_ERROR: string = "API Quota Exceeded";
 export const SEVICE_UNAVAILABLE_ERROR: string = "Service Unavailable";
 export const DEFAULT_ERROR: string = "Unable to process request";
-export const EXIT_CODES: Array<ExitCodes> = ["exit", "quit", "bye"];
+export const EXIT_CODES: ExitCode[] = ["exit", "quit", "bye"];
 export const KEY_FILE: string = "key.txt";
 export const KEY: string =
   "d139c8f475208eb70e0b8649e72164a7fa84bf3d3b84194dd72055a11ba3017a";
