@@ -1,3 +1,4 @@
+import chalk from "chalk";
 import { EXIT_CODES, ExitCode } from "./config";
 import { ChatMessage, addContext } from "./context";
 import { getResponse } from "./gpt";
@@ -25,6 +26,11 @@ export const removeKey = async (): Promise<void> => {
 
 export const createChat = async (opts: CliChatOptions): Promise<void> => {
   systemResponse(`Starting new chat using ${opts.engine}`, opts.verbose);
+  systemResponse(
+    `${chalk.yellow("♦")} Please type ${chalk.red("quit")} to exit`,
+    true,
+  );
+
   let apiKey = await decryptAndReturnKey();
 
   if (!apiKey) {

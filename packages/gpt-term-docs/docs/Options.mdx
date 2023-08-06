@@ -39,3 +39,9 @@ Use this option to control the model's likelihood of repeating the same line ver
 ### -s, --system-prompt *&lt;string&gt;*
 
 Specify your set of rules and instructions to guide the model's behavior in the conversation. This prompt helps the model understand the context and expectations.
+You must wrap your prompt in quotes i.e. `-s "You are a javascript engineer"`.
+
+### -x, --stop *&lt;string&gt;*
+
+Up to 4 sequences where the API will stop generating further tokens. The OpenAI API expects either `string` `array` or `null`. 
+The value must be wrapped in quotes. To pass an array you will need to comma separate each value i.e. `--stop "Human:,AI:"`.
