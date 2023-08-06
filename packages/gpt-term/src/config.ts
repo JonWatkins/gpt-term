@@ -1,5 +1,5 @@
 export type ExitCode = "exit" | "quit" | "bye";
-export const VERSION: string = "0.1.3";
+export const VERSION: string = "0.1.4";
 export const ASSISTANT: string = "ChatGPT:";
 export const CHAT_PREFIX: string = "✔";
 export const WRITE_INTERVAL: number = 10;
