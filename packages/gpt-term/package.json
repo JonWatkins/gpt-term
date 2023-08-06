@@ -1,6 +1,6 @@
 {
   "name": "gpt-term",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Run ChatGpt in your terminal.",
   "main": "dist/index.mjs",
   "scripts": {
