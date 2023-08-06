@@ -14,6 +14,7 @@ import {
   deleteKey,
   keyPrompt,
 } from "./utils";
+import chalk from "chalk";
 
 export const addKey = async (opts: CliKeyOptions): Promise<void> => {
   return await saveAndEncryptKey(opts.key);
@@ -25,6 +26,11 @@ export const removeKey = async (): Promise<void> => {
 
 export const createChat = async (opts: CliChatOptions): Promise<void> => {
   systemResponse(`Starting new chat using ${opts.engine}`, opts.verbose);
+  systemResponse(
+    `${chalk.yellow("♦")} Please type ${chalk.red("quit")} to exit`,
+    true,
+  );
+
   let apiKey = await decryptAndReturnKey();
 
   if (!apiKey) {
