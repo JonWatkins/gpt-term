@@ -26,6 +26,11 @@ export const getResponse = async (
     ...getContext(),
   ];
 
+  const stop =
+    typeof options.stop === "string"
+      ? options.stop.split(",").map((i: string): string => i.trim())
+      : undefined;
+
   const completion = await openai.createChatCompletion({
     messages: context,
     model: options.engine,
@@ -33,6 +38,7 @@ export const getResponse = async (
     max_tokens: parseInt(options.maxTokens),
     presence_penalty: parseInt(options.presencePenalty),
     frequency_penalty: parseInt(options.frequencyPenalty),
+    stop,
     n: 1,
     top_p: 1,
   });

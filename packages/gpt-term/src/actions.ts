@@ -1,3 +1,4 @@
+import chalk from "chalk";
 import { EXIT_CODES, ExitCode } from "./config";
 import { ChatMessage, addContext } from "./context";
 import { getResponse } from "./gpt";
@@ -14,7 +15,6 @@ import {
   deleteKey,
   keyPrompt,
 } from "./utils";
-import chalk from "chalk";
 
 export const addKey = async (opts: CliKeyOptions): Promise<void> => {
   return await saveAndEncryptKey(opts.key);

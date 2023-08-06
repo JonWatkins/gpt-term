@@ -43,6 +43,10 @@ program
     "Your set of rules and instructions to the model that will determine how it behaves.",
     DEFAULT_SYSTEM_PROMPT,
   )
+  .option(
+    "-x, --stop <string>",
+    "Up to 4 sequences where the API will stop generating further tokens.",
+  )
   .option("-v, --verbose", "Run with verbose logging.")
   .action(createChat);
 

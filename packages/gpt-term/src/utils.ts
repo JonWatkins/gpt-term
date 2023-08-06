@@ -19,6 +19,7 @@ export interface CliChatOptions {
   presencePenalty: string;
   frequencyPenalty: string;
   systemPrompt: string;
+  stop: string;
 }
 
 export const getCurrentDate = () => {
