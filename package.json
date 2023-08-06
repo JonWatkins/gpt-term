@@ -11,7 +11,8 @@
     "docs": "pnpm run --filter \"gpt-term-docs\" build",
     "start": "pnpm run --filter \"gpt-term-docs\" serve",
     "deploy": "pnpm run --filter \"gpt-term-docs\" deploy",
-    "dev": "pnpm run --filter \"gpt-term-docs\" start"
+    "dev": "pnpm run --filter \"gpt-term-docs\" start",
+    "gpt-term": "node packages/gpt-term/index.mjs chat --engine gpt-3.5-turbo --temperature 0.5 --max-tokens 2048 -s \"you are a javascript engineer\""
   },
   "keywords": [
     "openai",

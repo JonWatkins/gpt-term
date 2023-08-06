@@ -11,7 +11,7 @@ will be encrypted and stored in a text file on your machine.
 
 ```bash
 npm i -g gpt-term
-gpt-term chat --model gpt-3.5-turbo --temperature 0.5
+gpt-term chat --engine gpt-3.5-turbo --temperature 0.5 --max-tokens 2048
 ```
 
 ### Removing your API Key
@@ -23,7 +23,7 @@ gpt-term removekey
 ## Using with npx
 
 ```bash
-npx gpt-term chat --model gpt-3.5-turbo --temperature 0.5
+npx gpt-term chat --engine gpt-3.5-turbo --temperature 0.5 --max-tokens 2048
 ```
 
 `npx` downloads `gpt-term` to it's cache, to remove it run

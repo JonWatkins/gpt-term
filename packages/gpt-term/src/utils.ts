@@ -12,10 +12,26 @@ export interface CliKeyOptions {
 }
 
 export interface CliChatOptions {
-  model: string;
+  engine: string;
   temperature: string;
   verbose: boolean;
+  maxTokens: string;
+  presencePenalty: string;
+  frequencyPenalty: string;
+  systemPrompt: string;
 }
+
+export const getCurrentDate = () => {
+  const ts = new Date();
+  const day = ts.getDate();
+  const month = ts.getMonth();
+  const year = ts.getFullYear();
+  return `${year}-${month + 1}-${day}`;
+};
+
+export const insertCurrentDate = (value: string): string => {
+  return value.replace(/{currentDate}/g, getCurrentDate());
+};
 
 export const getPrompt = async (): Promise<string> => {
   const { prompt } = await prompts({
