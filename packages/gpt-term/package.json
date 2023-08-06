@@ -18,6 +18,7 @@
     "chat-gpt",
     "cli"
   ],
+  "homepage": "https://github.com/JonWatkins/gpt-term",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JonWatkins/gpt-term.git"
