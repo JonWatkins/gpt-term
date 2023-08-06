@@ -1,6 +1,6 @@
 # GPT-Term
 
-Work in progress simple cli application for interacting with ChatGPT. Checkout the [documentation](https://jonwatkins.github.io/gpt-term/) for more information.
+CLI application for interacting with ChatGPT. Checkout the [documentation](https://jonwatkins.github.io/gpt-term/) for more information.
 
 ### Usage
 
