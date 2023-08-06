@@ -1,0 +1,41 @@
+---
+sidebar_position: 2
+---
+
+## How to use command line options
+
+Most command line options are simple strings, such as the engine name `gpt-3.5-turbo` in the following example:
+
+```bash
+gpt-term chat --engine gpt-3.5-turbo
+```
+
+## Supported commandline options
+
+### -v, --verbose
+
+This option enables verbose logging, providing more detailed information during the execution of the CLI application.
+
+### -e, --engine *&lt;string&gt;*
+
+Use this option to specify the ChatGpt model to use for the conversation. You can choose from different models available.
+
+### -m, --max-tokens *&lt;number&gt;*
+
+With this option, you can set the maximum number of tokens to generate in the chat completion. Tokens are units of text used by the model for processing.
+
+### -t, --temperature *&lt;number&gt;*
+
+The sampling temperature determines the randomness of the output. You can set a value between 0 and 2, where higher values make the output more random.
+
+### -p, --presence-penalty *&lt;number&gt;*
+
+This option allows you to influence the model's likelihood of talking about new topics. You can set a number between -2.0 and 2.0, where positive values increase the likelihood.
+
+### -f, --frequency-penalty *&lt;number&gt;* 
+
+Use this option to control the model's likelihood of repeating the same line verbatim. Positive values between -2.0 and 2.0 decrease the likelihood.
+
+### -s, --system-prompt *&lt;string&gt;*
+
+Specify your set of rules and instructions to guide the model's behavior in the conversation. This prompt helps the model understand the context and expectations.

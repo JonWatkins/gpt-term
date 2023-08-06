@@ -1,6 +1,6 @@
 export type ExitCode = "exit" | "quit" | "bye";
 export const EXIT_CODES: ExitCode[] = ["exit", "quit", "bye"];
-export const VERSION: string = "0.1.5";
+export const VERSION: string = "0.1.6";
 
 export const ASSISTANT: string = "ChatGPT:";
 export const CHAT_PREFIX: string = "✔";
