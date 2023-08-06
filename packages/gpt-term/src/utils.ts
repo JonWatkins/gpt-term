@@ -11,6 +11,11 @@ export interface CliKeyOptions {
   key: string;
 }
 
+export interface CliLogOptions {
+  format: string;
+  clear: boolean;
+}
+
 export interface CliChatOptions {
   engine: string;
   temperature: string;
@@ -19,7 +24,7 @@ export interface CliChatOptions {
   presencePenalty: string;
   frequencyPenalty: string;
   systemPrompt: string;
-  clearHistory: string;
+  clearHistory: boolean;
   stop: string;
 }
 

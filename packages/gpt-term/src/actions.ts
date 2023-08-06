@@ -2,14 +2,22 @@ import chalk from "chalk";
 import { EXIT_CODES, ExitCode } from "./config";
 import { getResponse } from "./gpt";
 import { loadingSpinner } from "./spinner";
-import { parseError, Exception } from "./errorHandler";
 import { systemResponse, assistantResponse } from "./responseHandler";
 import { ChatMessage, addContext, initContext, storeContext } from "./context";
+
+import {
+  parseError,
+  Exception,
+  fetchLogs,
+  dumpLogs,
+  clearLogs,
+} from "./errorHandler";
 
 import {
   getPrompt,
   CliChatOptions,
   CliKeyOptions,
+  CliLogOptions,
   saveAndEncryptKey,
   decryptAndReturnKey,
   deleteKey,
@@ -22,6 +30,16 @@ export const addKey = async (opts: CliKeyOptions): Promise<void> => {
 
 export const removeKey = async (): Promise<void> => {
   return await deleteKey();
+};
+
+export const handleLogs = async (opts: CliLogOptions) => {
+  if (opts.clear) {
+    await clearLogs();
+    return;
+  }
+
+  const logs = await fetchLogs();
+  await dumpLogs(logs, opts);
 };
 
 export const createChat = async (opts: CliChatOptions): Promise<void> => {

@@ -1,5 +1,5 @@
 import { program } from "commander";
-import { createChat, addKey, removeKey } from "./actions";
+import { createChat, addKey, removeKey, handleLogs } from "./actions";
 
 import {
   VERSION,
@@ -57,5 +57,11 @@ program
   .action(addKey);
 
 program.command("removekey").action(removeKey);
+
+program
+  .command("logs")
+  .option("-f, --format <string>", "The format to use json/plain.", "plain")
+  .option("-c, --clear", "Deletes the logs")
+  .action(handleLogs);
 
 program.parse(argv);
