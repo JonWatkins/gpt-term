@@ -1,10 +1,10 @@
 import chalk from "chalk";
 import { EXIT_CODES, ExitCode } from "./config";
-import { ChatMessage, addContext } from "./context";
 import { getResponse } from "./gpt";
 import { loadingSpinner } from "./spinner";
 import { parseError, Exception } from "./errorHandler";
 import { systemResponse, assistantResponse } from "./responseHandler";
+import { ChatMessage, addContext, initContext, storeContext } from "./context";
 
 import {
   getPrompt,
@@ -31,6 +31,7 @@ export const createChat = async (opts: CliChatOptions): Promise<void> => {
     true,
   );
 
+  await initContext(opts.clearHistory);
   let apiKey = await decryptAndReturnKey();
 
   if (!apiKey) {
@@ -43,6 +44,7 @@ export const createChat = async (opts: CliChatOptions): Promise<void> => {
 
     if (EXIT_CODES.includes(prompt as ExitCode)) {
       await assistantResponse("goodbye");
+      await storeContext();
       process.exit(0);
     }
 

@@ -45,3 +45,7 @@ You must wrap your prompt in quotes i.e. `-s "You are a javascript engineer"`.
 
 Up to 4 sequences where the API will stop generating further tokens. The OpenAI API expects either `string` `array` or `null`. 
 The value must be wrapped in quotes. To pass an array you will need to comma separate each value i.e. `--stop "Human:,AI:"`.
+
+### -c, --clear-history
+
+The chat function will write the history to disk when you exit. To prevent that behaviour you can pass this flag.

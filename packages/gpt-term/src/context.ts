@@ -1,4 +1,7 @@
+import fs from "node:fs/promises";
 import { MAX_HISTORY } from "./config";
+import { __dirname, fileExists } from "./utils";
+const contextPath = `${__dirname}/context.text`;
 
 export type ChatMessage = {
   role: "user" | "assistant" | "system";
@@ -6,6 +9,23 @@ export type ChatMessage = {
 };
 
 let chatContext: ChatMessage[] = [];
+
+export const initContext = async (clearHistory: boolean): Promise<void> => {
+  if (clearHistory) {
+    return;
+  }
+  const exists = await fileExists(contextPath);
+  if (exists) {
+    const context = JSON.parse(await fs.readFile(contextPath, "utf-8"));
+    if (Array.isArray(context)) {
+      chatContext = context;
+    }
+  }
+};
+
+export const storeContext = async (): Promise<void> => {
+  await fs.writeFile(contextPath, JSON.stringify(getContext()));
+};
 
 export const getContext = (): ChatMessage[] => {
   return chatContext;

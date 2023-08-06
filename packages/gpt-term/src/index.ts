@@ -47,6 +47,7 @@ program
     "-x, --stop <string>",
     "Up to 4 sequences where the API will stop generating further tokens.",
   )
+  .option("-c, --clear-history", "Clears the chat history.")
   .option("-v, --verbose", "Run with verbose logging.")
   .action(createChat);
 

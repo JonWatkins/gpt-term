@@ -4,7 +4,7 @@ import * as url from "url";
 import { encrypt, decrypt } from "./encryption";
 import { KEY_FILE } from "./config";
 
-const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
+export const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
 const KEY_PATH = `${__dirname}/${KEY_FILE}`;
 
 export interface CliKeyOptions {
@@ -19,6 +19,7 @@ export interface CliChatOptions {
   presencePenalty: string;
   frequencyPenalty: string;
   systemPrompt: string;
+  clearHistory: string;
   stop: string;
 }
 
@@ -58,7 +59,7 @@ export const keyPrompt = async (): Promise<string> => {
   return prompt;
 };
 
-const fileExists = async (path: string) =>
+export const fileExists = async (path: string) =>
   !!(await fs.stat(path).catch(() => false));
 
 export const saveAndEncryptKey = async (key: string): Promise<void> => {
