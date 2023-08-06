@@ -1,30 +1,27 @@
 import crypto from "crypto";
-import { KEY, SECRET } from "./config";
+import { SECRET } from "./config";
 
 const algorithm = "aes-256-cbc";
 
 const key = crypto
   .createHash("sha256")
-  .update(String(KEY))
+  .update(String(SECRET))
   .digest("base64")
   .slice(0, 32);
 
-const secret = crypto
-  .createHash("sha256")
-  .update(String(SECRET))
-  .digest("base64")
-  .slice(0, 16);
-
 export const encrypt = (text: string): string => {
-  const cipher = crypto.createCipheriv(algorithm, key, secret);
+  const iv = crypto.randomBytes(16);
+  const cipher = crypto.createCipheriv(algorithm, key, iv);
   let encrypted = cipher.update(text);
   encrypted = Buffer.concat([encrypted, cipher.final()]);
-  return encrypted.toString("hex");
+  return iv.toString("hex") + ":" + encrypted.toString("hex");
 };
 
 export const decrypt = (text: string): string => {
-  const encryptedText = Buffer.from(text, "hex");
-  const decipher = crypto.createDecipheriv(algorithm, key, secret);
+  const parts = text.split(":");
+  const iv = Buffer.from(parts.shift() as string, "hex");
+  const encryptedText = Buffer.from(parts.join(":"), "hex");
+  const decipher = crypto.createDecipheriv(algorithm, key, iv);
   let decrypted = decipher.update(encryptedText);
   decrypted = Buffer.concat([decrypted, decipher.final()]);
   return decrypted.toString();
