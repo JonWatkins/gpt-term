@@ -24,7 +24,7 @@ export const removeKey = async (): Promise<void> => {
 };
 
 export const createChat = async (opts: CliChatOptions): Promise<void> => {
-  systemResponse(`Starting new chat using ${opts.model}`, opts.verbose);
+  systemResponse(`Starting new chat using ${opts.engine}`, opts.verbose);
   let apiKey = await decryptAndReturnKey();
 
   if (!apiKey) {
