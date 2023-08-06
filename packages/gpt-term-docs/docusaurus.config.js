@@ -55,7 +55,7 @@ const config = {
             type: "docSidebar",
             sidebarId: "tutorialSidebar",
             position: "left",
-            label: "Tutorial",
+            label: "Docs",
           },
           { to: "/blog", label: "Blog", position: "left" },
           {
@@ -100,7 +100,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} GPT-Term, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} GPT-Term.`,
       },
       colorMode: {
         defaultMode: "dark",

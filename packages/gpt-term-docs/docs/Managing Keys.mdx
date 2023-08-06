@@ -1,0 +1,20 @@
+## Adding your openai apiKey
+
+The first time you run the `chat` function it will prompt you for your apiKey if you have not allready provided one.
+If you want to add your key first you may call the `addkey` function.
+
+```bash
+gpt-term addkey --key YOUR_KEY_GOES_HERE
+```
+
+Please not that if you run the `addkey` function again it will overwrite your apiKey.
+
+## Removing your openai apiKey
+
+To remove your apiKey you can call the `removekey` function. This will delete the encrypted key file from your machine.
+
+```bash
+gpt-term removekey
+```
+
+After doing this the next time you run the `chat` function it will prompt you again for your apiKey.

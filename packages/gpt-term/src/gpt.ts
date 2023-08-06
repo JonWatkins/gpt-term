@@ -26,8 +26,6 @@ export const getResponse = async (
     ...getContext(),
   ];
 
-  console.log(context);
-
   const completion = await openai.createChatCompletion({
     messages: context,
     model: options.engine,
