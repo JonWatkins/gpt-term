@@ -2,12 +2,7 @@ import crypto from "crypto";
 import { SECRET } from "./config";
 
 const algorithm = "aes-256-cbc";
-
-const key = crypto
-  .createHash("sha256")
-  .update(String(SECRET))
-  .digest("base64")
-  .slice(0, 32);
+const key = crypto.scryptSync(SECRET, "salt", 32);
 
 export const encrypt = (text: string): string => {
   const iv = crypto.randomBytes(16);
