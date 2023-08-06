@@ -1,6 +1,6 @@
 {
   "name": "gpt-term-docs",
-  "version": "0.1.6",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",

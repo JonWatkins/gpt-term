@@ -1,0 +1,27 @@
+---
+sidebar_position: 4
+---
+
+## Viewing error logs
+
+The error displayed in the chat is a simple messgae. For more details on what the error was you can
+use the `log` function.
+
+```bash
+gpt-term logs
+````
+
+This will output the error logs in plain text. If you want to view a parsed view you can pass the
+format command line option with the `json` value.
+
+```bash
+gpt-term logs --format json
+```
+
+## Removing error logs
+
+To clear the `error.log` file you can pass pass the `--clear` command line option.
+
+```bash
+gpt-term logs --clear
+```
