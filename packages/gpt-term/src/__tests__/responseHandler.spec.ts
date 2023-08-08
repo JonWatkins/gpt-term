@@ -14,7 +14,7 @@ jest.mock("../utils", () => {
 // exported module, they come from the mock this is just to be able to check the
 // output from the writeCharacter method easier.
 // @ts-ignore
-import { writeCharacter, characters } from "../utils";
+import { characters } from "../utils";
 import { systemResponse, assistantResponse } from "../responseHandler";
 
 const log = jest.spyOn(console, "log").mockImplementation(() => {});
