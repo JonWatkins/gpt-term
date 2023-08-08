@@ -11,8 +11,8 @@ export interface CliKeyOptions {
 }
 
 export interface CliLogOptions {
-  format: string;
-  clear: boolean;
+  format?: string;
+  clear?: boolean;
 }
 
 export interface CliChatOptions {
@@ -83,4 +83,8 @@ export const decryptAndReturnKey = async (): Promise<string> => {
 
 export const deleteKey = async (): Promise<void> => {
   return fs.unlink(KEY_PATH);
+};
+
+export const writeCharacter = (character: string) => {
+  process.stdout.write(character);
 };

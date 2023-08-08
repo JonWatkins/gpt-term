@@ -9,6 +9,11 @@ describe("utils", () => {
     jest.resetAllMocks();
   });
 
+  describe("writeCharacter", () => {
+    utils.writeCharacter("A");
+    expect(process.stdout.write).toHaveBeenCalled();
+  });
+
   describe("getCurrentDate", () => {
     it("should have a method to get the current date", () => {
       expect(utils.getCurrentDate()).toEqual("2023-11-26");

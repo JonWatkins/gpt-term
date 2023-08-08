@@ -1,4 +1,5 @@
 import { CHAT_PREFIX, ASSISTANT, WRITE_INTERVAL } from "./config";
+import { writeCharacter } from "./utils";
 import chalk from "chalk";
 import { marked } from "marked";
 import TerminalRenderer from "marked-terminal";
@@ -27,7 +28,7 @@ export const assistantResponse = (response: string): Promise<string> => {
     let i = 0;
     const interval = setInterval(() => {
       if (i < parsedResponse.length) {
-        process.stdout.write(parsedResponse[i]);
+        writeCharacter(parsedResponse[i]);
         i++;
       } else {
         clearInterval(interval);

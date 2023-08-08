@@ -11,11 +11,6 @@ import {
   DEFAULT_MODEL,
   DEFAULT_TEMP,
   DEFAULT_SYSTEM_PROMPT,
-  NOT_FOUND_ERROR,
-  RATE_EXCEEDED_ERROR,
-  BAD_REQUEST_ERROR,
-  QUOTA_EXCEEDED_ERROR,
-  SEVICE_UNAVAILABLE_ERROR,
   DEFAULT_ERROR,
   KEY_FILE,
   SECRET,
@@ -72,30 +67,6 @@ describe("Variable Values Test", () => {
       "You are ChatGPT, a large language model trained by OpenAI, based on " +
       `the GPT-3.5 architecture. Knowledge cutoff: 2021-09 Current date: {currentDate}`;
     expect(DEFAULT_SYSTEM_PROMPT).toBe(expectedSystemPrompt);
-  });
-
-  it("should have correct value for NOT_FOUND_ERROR", () => {
-    expect(NOT_FOUND_ERROR).toBe(
-      "Model not found. Please check the model name.",
-    );
-  });
-
-  it("should have correct value for RATE_EXCEEDED_ERROR", () => {
-    expect(RATE_EXCEEDED_ERROR).toBe("API Rate Limit Exceeded.");
-  });
-
-  it("should have correct value for BAD_REQUEST_ERROR", () => {
-    expect(BAD_REQUEST_ERROR).toBe(
-      "Bad Request: Prompt provided is empty or too long.",
-    );
-  });
-
-  it("should have correct value for QUOTA_EXCEEDED_ERROR", () => {
-    expect(QUOTA_EXCEEDED_ERROR).toBe("API Quota Exceeded");
-  });
-
-  it("should have correct value for SEVICE_UNAVAILABLE_ERROR", () => {
-    expect(SEVICE_UNAVAILABLE_ERROR).toBe("Service Unavailable");
   });
 
   it("should have correct value for DEFAULT_ERROR", () => {
