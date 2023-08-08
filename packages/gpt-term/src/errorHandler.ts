@@ -1,5 +1,6 @@
 import winston from "winston";
-import { __dirname, fileExists, CliLogOptions } from "./utils";
+import { fileExists, CliLogOptions } from "./utils";
+import { __dirname } from "./dirname";
 import fs from "node:fs/promises";
 import chalk from "chalk";
 

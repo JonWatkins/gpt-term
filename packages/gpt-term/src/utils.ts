@@ -1,10 +1,9 @@
-import prompts from "prompts";
+import inquirer from "inquirer";
 import fs from "node:fs/promises";
-import * as url from "url";
 import { encrypt, decrypt } from "./encryption";
 import { KEY_FILE } from "./config";
+import { __dirname } from "./dirname";
 
-export const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
 const KEY_PATH = `${__dirname}/${KEY_FILE}`;
 
 export interface CliKeyOptions {
@@ -28,7 +27,7 @@ export interface CliChatOptions {
   stop: string;
 }
 
-export const getCurrentDate = () => {
+export const getCurrentDate = (): string => {
   const ts = new Date();
   const day = ts.getDate();
   const month = ts.getMonth();
@@ -41,30 +40,32 @@ export const insertCurrentDate = (value: string): string => {
 };
 
 export const getPrompt = async (): Promise<string> => {
-  const { prompt } = await prompts({
-    type: "text",
-    name: "prompt",
-    message: "You: ",
-    validate: (value) =>
-      value.length === 0 ? "You must enter a prompt" : true,
-  });
+  const { prompt } = await inquirer.prompt([
+    {
+      type: "input",
+      name: "prompt",
+      message: "You: ",
+      validate: async (value) => value.length > 0,
+    },
+  ]);
 
   return prompt;
 };
 
 export const keyPrompt = async (): Promise<string> => {
-  const { prompt } = await prompts({
-    type: "text",
-    name: "prompt",
-    message: "Key not found, Please enter your API key:",
-    validate: (value) =>
-      value.length === 0 ? "You must enter an API Key" : true,
-  });
+  const { prompt } = await inquirer.prompt([
+    {
+      type: "input",
+      name: "prompt",
+      message: "Key not found, Please enter your API key:",
+      validate: async (value) => value.length > 0,
+    },
+  ]);
 
   return prompt;
 };
 
-export const fileExists = async (path: string) =>
+export const fileExists = async (path: string): Promise<boolean> =>
   !!(await fs.stat(path).catch(() => false));
 
 export const saveAndEncryptKey = async (key: string): Promise<void> => {

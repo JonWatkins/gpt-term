@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import { MAX_HISTORY } from "./config";
-import { __dirname, fileExists } from "./utils";
+import { fileExists } from "./utils";
+import { __dirname } from "./dirname";
 const contextPath = `${__dirname}/context.text`;
 
 export type ChatMessage = {
@@ -12,6 +13,7 @@ let chatContext: ChatMessage[] = [];
 
 export const initContext = async (clearHistory: boolean): Promise<void> => {
   if (clearHistory) {
+    resetContext(); // make sure the array is indeed empty
     return;
   }
   const exists = await fileExists(contextPath);
@@ -29,6 +31,10 @@ export const storeContext = async (): Promise<void> => {
 
 export const getContext = (): ChatMessage[] => {
   return chatContext;
+};
+
+export const resetContext = (): void => {
+  chatContext = [];
 };
 
 export const addContext = (message: ChatMessage): void => {

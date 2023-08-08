@@ -50,5 +50,6 @@ module.exports = {
     describe: true,
     it: true,
     expect: true,
+    jest: true,
   },
 };
