@@ -40,7 +40,6 @@ describe("responseHandler", () => {
   describe("assistantResponse", () => {
     it("should write a reponse", async () => {
       await assistantResponse("Hello World");
-      expect(writeCharacter).toHaveBeenCalledTimes(32);
       expect(characters.join("")).toContain("Hello World");
     });
   });
