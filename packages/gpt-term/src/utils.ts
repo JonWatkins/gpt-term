@@ -11,8 +11,8 @@ export interface CliKeyOptions {
 }
 
 export interface CliLogOptions {
-  format: string;
-  clear: boolean;
+  format?: string;
+  clear?: boolean;
 }
 
 export interface CliChatOptions {

@@ -16,13 +16,6 @@ export const DEFAULT_SYSTEM_PROMPT =
   "You are ChatGPT, a large language model trained by OpenAI, based on " +
   "the GPT-3.5 architecture. Knowledge cutoff: 2021-09 Current date: {currentDate}";
 
-export const NOT_FOUND_ERROR: string =
-  "Model not found. Please check the model name.";
-export const RATE_EXCEEDED_ERROR: string = "API Rate Limit Exceeded.";
-export const BAD_REQUEST_ERROR: string =
-  "Bad Request: Prompt provided is empty or too long.";
-export const QUOTA_EXCEEDED_ERROR: string = "API Quota Exceeded";
-export const SEVICE_UNAVAILABLE_ERROR: string = "Service Unavailable";
 export const DEFAULT_ERROR: string = "Unable to process request";
 
 export const KEY_FILE: string = "key.txt";

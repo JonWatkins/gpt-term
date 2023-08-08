@@ -3,25 +3,26 @@ import { fileExists, CliLogOptions } from "./utils";
 import { __dirname } from "./dirname";
 import fs from "node:fs/promises";
 import chalk from "chalk";
-
-import {
-  NOT_FOUND_ERROR,
-  RATE_EXCEEDED_ERROR,
-  BAD_REQUEST_ERROR,
-  QUOTA_EXCEEDED_ERROR,
-  SEVICE_UNAVAILABLE_ERROR,
-  DEFAULT_ERROR,
-} from "./config";
+import { DEFAULT_ERROR } from "./config";
 
 const logPath: string = `${__dirname}/error.log`;
 
 export interface Exception {
-  message: string;
-  response: {
-    status: string;
-    data: {
-      error?: unknown;
-    };
+  message?: string;
+  response?: {
+    status?: number;
+    data?: ErrorData;
+  };
+}
+
+export interface ErrorData {
+  error?: {
+    code?: string;
+    level?: string;
+    message?: string;
+    param?: unknown;
+    service?: string;
+    type?: string;
   };
 }
 
@@ -38,24 +39,25 @@ const logger = winston.createLogger({
 });
 
 export const parseError = (error: Exception): string => {
-  const status: number = parseInt(error.response.status);
-  const errorData = error.response.data.error;
-  logger.error(error.message, errorData);
+  let message: string | undefined;
+  let errorData: ErrorData;
 
-  switch (status) {
-    case 404:
-      return NOT_FOUND_ERROR;
-    case 429:
-      return RATE_EXCEEDED_ERROR;
-    case 400:
-      return BAD_REQUEST_ERROR;
-    case 402:
-      return QUOTA_EXCEEDED_ERROR;
-    case 503:
-      return SEVICE_UNAVAILABLE_ERROR;
-    default:
-      return DEFAULT_ERROR;
+  if (!error.response) {
+    errorData = {};
+    message = error.message;
+  } else {
+    errorData = error.response.data || {};
+    if (errorData.error && errorData.error.message) {
+      message = errorData.error.message;
+    }
   }
+
+  if (typeof message !== "string") {
+    message = DEFAULT_ERROR;
+  }
+
+  logger.error(message, errorData);
+  return message;
 };
 
 export const fetchLogs = async (): Promise<string> => {
