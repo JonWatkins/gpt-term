@@ -1,4 +1,4 @@
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/JonWatkins/gpt-term/main.yml) ![npm](https://img.shields.io/npm/v/gpt-term) ![GitHub](https://img.shields.io/github/license/JonWatkins/gpt-term) [![codecov](https://codecov.io/gh/JonWatkins/gpt-term/branch/main/graph/badge.svg?token=CZ8QB5X8S5)](https://codecov.io/gh/JonWatkins/gpt-term)
+![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/JonWatkins/gpt-term/main.yml) ![npm](https://img.shields.io/npm/v/gpt-term) ![GitHub](https://img.shields.io/github/license/JonWatkins/gpt-term) [![codecov](https://codecov.io/gh/JonWatkins/gpt-term/branch/main/graph/badge.svg?token=CZ8QB5X8S5)](https://codecov.io/gh/JonWatkins/gpt-term)
 
 # GPT-Term
 
