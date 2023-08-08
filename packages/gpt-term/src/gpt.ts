@@ -1,6 +1,6 @@
 import { Configuration, OpenAIApi } from "openai";
 import { getContext, ChatMessage } from "./context";
-import { loadingSpinner } from "./spinner";
+import { spinnerStart, spinnerSucceed } from "./spinner";
 import { CliChatOptions, insertCurrentDate } from "./utils";
 import { DEFAULT_SYSTEM_PROMPT } from "./config";
 
@@ -8,7 +8,7 @@ export const getResponse = async (
   apiKey: string,
   options: CliChatOptions,
 ): Promise<ChatMessage> => {
-  loadingSpinner.start();
+  spinnerStart();
 
   const configuration = new Configuration({
     apiKey,
@@ -43,7 +43,7 @@ export const getResponse = async (
     top_p: 1,
   });
 
-  loadingSpinner.succeed();
+  spinnerSucceed();
 
   return completion.data.choices[0].message as ChatMessage;
 };
