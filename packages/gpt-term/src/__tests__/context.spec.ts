@@ -1,3 +1,11 @@
+jest.mock("../utils", () => {
+  const original = jest.requireActual("../utils");
+  return {
+    ...original,
+    fileExists: jest.fn().mockImplementation(() => true),
+  };
+});
+
 import fs from "node:fs/promises";
 import { fileExists } from "../utils";
 import { __dirname } from "../dirname";
@@ -10,14 +18,6 @@ import {
   addContext,
   resetContext,
 } from "../context";
-
-jest.mock("../utils", () => {
-  const original = jest.requireActual("../utils");
-  return {
-    ...original,
-    fileExists: jest.fn().mockImplementation(() => true),
-  };
-});
 
 describe("Context", () => {
   afterAll(() => {

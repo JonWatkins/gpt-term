@@ -1,6 +1,3 @@
-import { deleteKey, saveAndEncryptKey } from "../utils";
-import { addKey, removeKey } from "../actions";
-
 jest.mock("../utils", () => {
   const original = jest.requireActual("../utils");
   return {
@@ -10,6 +7,9 @@ jest.mock("../utils", () => {
     deleteKey: jest.fn(),
   };
 });
+
+import { deleteKey, saveAndEncryptKey } from "../utils";
+import { addKey, removeKey } from "../actions";
 
 describe("actions", () => {
   afterAll(() => {

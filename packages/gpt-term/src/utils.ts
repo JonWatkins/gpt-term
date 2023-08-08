@@ -84,3 +84,7 @@ export const decryptAndReturnKey = async (): Promise<string> => {
 export const deleteKey = async (): Promise<void> => {
   return fs.unlink(KEY_PATH);
 };
+
+export const writeCharacter = (character: string) => {
+  process.stdout.write(character);
+};
