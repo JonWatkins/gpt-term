@@ -23,7 +23,7 @@ describe("Variable Values Test", () => {
   });
 
   it("should have correct value for VERSION", () => {
-    expect(VERSION).toBe("1.0.1");
+    expect(VERSION).toBe("1.0.2");
   });
 
   it("should have correct value for ASSISTANT", () => {
