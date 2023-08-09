@@ -9,21 +9,8 @@ jest.mock("../utils", () => {
 });
 
 import { deleteKey, saveAndEncryptKey } from "../utils";
-import { addKey, createChat, handleLogs, removeKey } from "../actions";
+import { addKey, handleLogs, removeKey } from "../actions";
 import { writeFile, unlink } from "node:fs/promises";
-import { CliChatOptions } from "../utils";
-
-// @ts-ignore
-import { expectPrompts } from "inquirer";
-
-import {
-  DEFAULT_MODEL,
-  DEFAULT_TEMP,
-  DEFAULT_MAX_TOKENS,
-  DEFAULT_PRESENCE_PENALTY,
-  DEFAULT_FREQUENCY_PENALTY,
-  DEFAULT_SYSTEM_PROMPT,
-} from "../config";
 
 const log = jest.spyOn(console, "log").mockImplementation(() => {});
 
