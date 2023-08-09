@@ -12,7 +12,7 @@ module.exports = {
     });
   }),
   readFile: jest.fn().mockImplementation((path) => {
-    return storedData.find((item) => item.path === path).content;
+    return storedData.find((item) => item.path === path)?.content || "";
   }),
   writeFile: jest.fn().mockImplementation((path, content) => {
     allowedFiles.push(path);

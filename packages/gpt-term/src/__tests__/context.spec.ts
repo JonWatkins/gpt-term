@@ -61,7 +61,7 @@ describe("Context", () => {
     let contextPath: string;
 
     beforeAll(() => {
-      contextPath = `${__dirname}/context.text`;
+      contextPath = `${__dirname}/context.txt`;
     });
 
     beforeEach(() => {

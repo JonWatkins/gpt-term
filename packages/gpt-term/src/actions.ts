@@ -1,7 +1,7 @@
 import chalk from "chalk";
 import { EXIT_CODES, ExitCode } from "./config";
 import { getResponse } from "./gpt";
-import { loadingSpinner } from "./spinner";
+import { spinnerFail } from "./spinner";
 import { systemResponse, assistantResponse } from "./responseHandler";
 import { ChatMessage, addContext, initContext, storeContext } from "./context";
 
@@ -76,7 +76,7 @@ export const createChat = async (opts: CliChatOptions): Promise<void> => {
       }
     } catch (error) {
       const errorMessage = parseError(error as Exception);
-      loadingSpinner.fail(errorMessage);
+      spinnerFail(errorMessage);
     } finally {
       await processNextMessage();
     }

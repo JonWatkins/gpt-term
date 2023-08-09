@@ -10,6 +10,7 @@ const config: Config = {
     ora: "<rootDir>/packages/gpt-term/src/__mocks__/ora.js",
     winston: "<rootDir>/packages/gpt-term/src/__mocks__/winston.js",
     inquirer: "<rootDir>/packages/gpt-term/src/__mocks__/inquirer.js",
+    openai: "<rootDir>/packages/gpt-term/src/__mocks__/openai.js",
     "node:fs/promises": "<rootDir>/packages/gpt-term/src/__mocks__/fs.js",
     "./dirname": "<rootDir>/packages/gpt-term/src/__mocks__/dirname.js",
   },

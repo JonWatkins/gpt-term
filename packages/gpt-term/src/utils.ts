@@ -24,7 +24,7 @@ export interface CliChatOptions {
   frequencyPenalty: string;
   systemPrompt: string;
   clearHistory: boolean;
-  stop: string;
+  stop?: string;
 }
 
 export const getCurrentDate = (): string => {
