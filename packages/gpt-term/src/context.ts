@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import { MAX_HISTORY } from "./config";
 import { fileExists } from "./utils";
 import { __dirname } from "./dirname";
-const contextPath = `${__dirname}/context.text`;
+const contextPath = `${__dirname}/context.txt`;
 
 export type ChatMessage = {
   role: "user" | "assistant" | "system";
